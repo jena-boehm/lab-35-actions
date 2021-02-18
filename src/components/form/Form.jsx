@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from '../../state/BlogProvider';
+import { createPost } from '../../actions/postActions';
 
 function Form() {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch(createPost({ title, body }));
   };
 
   return (
