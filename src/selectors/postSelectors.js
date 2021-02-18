@@ -1,3 +1,4 @@
 export const getPosts = state => {
-  return state.posts;
+  console.log('STATE', state);
+  return state.posts.posts;
 };

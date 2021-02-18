@@ -1,6 +1,6 @@
 import React from 'react';
 import Post from './Post';
-import { useSelector } from '../../state/BlogProvider';
+import { useSelector } from 'react-redux';
 import styles from '../app/App.css';
 import { getPosts } from '../../selectors/postSelectors';
 
