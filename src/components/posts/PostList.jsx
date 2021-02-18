@@ -9,7 +9,7 @@ function PostList() {
   console.log(posts);
 
   const postElements = posts.map(post => {
-    <p key={post.title}>
+    return <p key={post.title}>
       <Post {...post} />
     </p>;
   });
