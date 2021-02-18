@@ -13,9 +13,9 @@ export const BlogProvider = ({ children }) => {
   );
 };
 
-export const usePostState = () => {
+export const useSelector = selectorFunction => {
   const { state } = useContext(BlogContext);
-  return state;
+  return selectorFunction(state);
 };
 
 export const useDispatch = () => {

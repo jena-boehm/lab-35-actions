@@ -1,14 +1,15 @@
 import React from 'react';
 import Post from './Post';
-import { usePostState } from '../../state/BlogProvider';
+import { useSelector } from '../../state/BlogProvider';
 import styles from '../app/App.css';
+import { getPosts } from '../../selectors/postSelectors';
 
 function PostList() {
-  const { posts } = usePostState();
+  const posts = useSelector(getPosts);
   console.log(posts);
 
   const postElements = posts.map(post => {
-    <p key={post}>
+    <p key={post.title}>
       <Post {...post} />
     </p>;
   });
@@ -16,7 +17,9 @@ function PostList() {
   return (
     <div className={styles.postList}>
       <h2 className={styles.header}>Posts</h2>
-      {postElements}
+      <div>
+        {postElements}
+      </div>
     </div>
   );
 }
