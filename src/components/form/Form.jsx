@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch } from '../../state/BlogProvider';
 import { createPost } from '../../actions/postActions';
 import styles from '../app/App.css';
@@ -41,10 +40,6 @@ function Form() {
     </>
   );
 }
-
-Form.propTypes = {
-
-};
 
 export default Form;
 

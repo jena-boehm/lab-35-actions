@@ -7,7 +7,7 @@ function Post({ title, body }) {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch(deletePost(title));
+    dispatch(deletePost(title, body));
   };
 
   return (

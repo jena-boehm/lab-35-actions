@@ -18,7 +18,9 @@ export default function reducer(state, action) {
     case DELETE_POST:
       return {
         ...state,
-        posts: posts.filter(post => post.title !== action.payload)
+        posts: posts.filter(post => 
+          post.title !== payload.title 
+            || post.body !== payload.body)
       };
 
     default:
