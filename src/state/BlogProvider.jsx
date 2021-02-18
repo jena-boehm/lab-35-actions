@@ -13,6 +13,11 @@ export const BlogProvider = ({ children }) => {
   );
 };
 
+export const usePostState = () => {
+  const { state } = useContext(BlogContext);
+  return state;
+};
+
 export const useDispatch = () => {
   const { dispatch } = useContext(BlogContext);
   return dispatch;

@@ -15,7 +15,10 @@ describe('post reducer', () => {
     const newState = reducer(state, action);
 
     expect(newState).toEqual({
-      posts: [{ title: 'this is a post title', body: 'this is a post body' }]
+      posts: [{ 
+        title: 'this is a post title', 
+        body: 'this is a post body' 
+      }]
     });
   });
 });

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from '../../state/BlogProvider';
 import { createPost } from '../../actions/postActions';
+import styles from '../app/App.css';
 
 function Form() {
   const dispatch = useDispatch();
@@ -14,21 +15,30 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={({ target }) => setTitle(target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Body"
-        value={body}
-        onChange={({ target }) => setBody(target.value)}
-      />
-      <button>Create Post</button>
-    </form>
+    <>
+      <h2 className={styles.formHeading}>Create a Post</h2>
+      <div className={styles.formContainer}>
+        <form 
+          onSubmit={handleSubmit}
+          className={styles.form}>
+          <input
+            className={styles.titleInput}
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={({ target }) => setTitle(target.value)}
+          />
+          <input
+            className={styles.bodyInput}
+            type="text"
+            placeholder="Body"
+            value={body}
+            onChange={({ target }) => setBody(target.value)}
+          />
+          <button className={styles.button}>Create Post</button>
+        </form>
+      </div>
+    </>
   );
 }
 

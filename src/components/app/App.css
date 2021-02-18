@@ -1,0 +1,40 @@
+.postList {
+    height: 40em;
+    margin-top: 2em;
+}
+
+.header {
+    text-align: center;
+}
+
+.formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.form {
+    display: grid;
+    width: 50%;
+}
+
+.formHeading {
+    text-align: center;
+}
+
+.titleInput {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.bodyInput {
+    text-align: center;
+    height: 5em;
+    margin-bottom: 1em;
+}
+
+.button {
+    width: 30%;
+}
