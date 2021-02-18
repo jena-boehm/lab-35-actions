@@ -16,5 +16,4 @@ describe('post selectors', () => {
       body: 'this is a post body' 
     }]);
   });
-})
-;
+});
