@@ -1,29 +1,29 @@
-// import { CREATE_POST, DELETE_POST } from '../actions/postActions';
+import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/postActions';
 
-// export const initialState = {
-//   posts: []
-// };
+export const initialState = {
+  comments: []
+};
 
-// export default function commentReducer(state, action) {
-//   const { posts } = state;
-//   const { payload } = action;
+export default function commentReducer(state = initialState, action) {
+  const { comments } = state;
+  const { payload } = action;
   
-//   switch(action.type) {
-//     case CREATE_POST:
-//       return {
-//         ...state,
-//         posts: [...posts, payload]
-//       };
+  switch(action.type) {
+    case CREATE_COMMENT:
+      return {
+        ...state,
+        comments: [...comments, payload]
+      };
 
-//     case DELETE_POST:
-//       return {
-//         ...state,
-//         posts: posts.filter(post => 
-//           post.title !== payload.title 
-//             || post.body !== payload.body)
-//       };
+    case DELETE_COMMENT:
+      return {
+        ...state,
+        comments: comments.filter(comment => 
+          comment.title !== payload.title 
+            || comment.body !== payload.body)
+      };
 
-//     default:
-//       return state;
-//   }
-// }
+    default:
+      return state;
+  }
+}
