@@ -1,4 +1,4 @@
-import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/postActions';
+import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/commentActions';
 
 export const initialState = {
   comments: []
@@ -19,8 +19,7 @@ export default function commentReducer(state = initialState, action) {
       return {
         ...state,
         comments: comments.filter(comment => 
-          comment.title !== payload.title 
-            || comment.body !== payload.body)
+          comment.body !== payload)
       };
 
     default:
