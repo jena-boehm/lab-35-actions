@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { createComment } from '../../actions/commentActions';
 
-function CommentsForm({ index }) {
+function CommentsForm() {
   const dispatch = useDispatch();
   const [commentBody, setCommentBody] = useState('');
 
   const handleCommentSubmit = e => {
     e.preventDefault();
-    dispatch(createComment({ commentBody, index }));
+    dispatch(createComment({ commentBody }));
+    console.log('BODY', commentBody);
   };
 
   return (
@@ -26,10 +27,5 @@ function CommentsForm({ index }) {
     </div>
   );
 }
-
-CommentsForm.propTypes = {
-  index: PropTypes.string.isRequired
-};
-
 export default CommentsForm;
 

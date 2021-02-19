@@ -17,7 +17,7 @@ function Post({ title, body, index }) {
       <h2>{title}</h2>  
       <p>{body}</p>
       <button onClick={handleDelete}>Delete</button>
-      <CommentsForm index={index} />
+      <CommentsForm />
       <CommentList />
     </>
   );
@@ -25,8 +25,7 @@ function Post({ title, body, index }) {
 
 Post.propTypes = {
   title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  index: PropTypes.string.isRequired
+  body: PropTypes.string.isRequired
 };
 
 export default Post;

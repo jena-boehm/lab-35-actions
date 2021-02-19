@@ -19,7 +19,7 @@ export default function commentReducer(state = initialState, action) {
       return {
         ...state,
         comments: comments.filter(comment => 
-          comment.body !== payload)
+          comment.commentBody !== payload)
       };
 
     default:

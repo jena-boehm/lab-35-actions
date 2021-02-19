@@ -8,6 +8,7 @@ function Comment({ commentBody }) {
 
   const handleCommentDelete = () => {
     dispatch(deleteComment(commentBody));
+    console.log('DELETE BODY', commentBody);
   };
 
   return (

@@ -7,9 +7,9 @@ import { getPosts } from '../../selectors/postSelectors';
 function PostList() {
   const posts = useSelector(getPosts);
 
-  const postElements = posts.map(post => {
+  const postElements = posts.map((post, index) => {
     return <div key={post.title}>
-      <Post {...post} />
+      <Post {...post} index={index} />
     </div>;
   });
   
