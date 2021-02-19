@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteComment } from '../../actions/commentActions';
 
-function Comment({ body }) {
+function Comment({ commentBody }) {
   const dispatch = useDispatch();
 
   const handleCommentDelete = () => {
-    dispatch(deleteComment(body));
+    dispatch(deleteComment(commentBody));
   };
 
   return (
     <>
-      <div>{body}</div>
+      <div>{commentBody}</div>
       <button 
         onClick={handleCommentDelete}>Delete</button>
     </>
@@ -20,7 +20,7 @@ function Comment({ body }) {
 }
 
 Comment.propTypes = {
-  body: PropTypes.string.isRequired
+  commentBody: PropTypes.string.isRequired
 };
 
 export default Comment;
