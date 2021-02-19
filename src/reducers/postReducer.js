@@ -4,7 +4,7 @@ export const initialState = {
   posts: []
 };
 
-export default function reducer(state, action) {
+export default function reducer(state = initialState, action) {
   const { posts } = state;
   const { payload } = action;
   

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from '../../state/BlogProvider';
+import { useDispatch } from 'react-redux';
 import { createPost } from '../../actions/postActions';
 import styles from '../app/App.css';
 

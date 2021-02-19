@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from '../../state/BlogProvider';
+import { useDispatch } from 'react-redux';
 import { deletePost } from '../../actions/postActions';
+import CommentList from '../comments/CommentList';
+import CommentsForm from '../comments form/CommentsForm';
 
-function Post({ title, body }) {
+function Post({ title, body, index }) {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
@@ -12,18 +14,19 @@ function Post({ title, body }) {
 
   return (
     <>
-      <div>
-        <h2>{title}</h2>  
-        <p>{body}</p>
-      </div>
+      <h2>{title}</h2>  
+      <p>{body}</p>
       <button onClick={handleDelete}>Delete</button>
+      <CommentsForm index={index} />
+      <CommentList />
     </>
   );
 }
 
 Post.propTypes = {
   title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired
+  body: PropTypes.string.isRequired,
+  index: PropTypes.string.isRequired
 };
 
 export default Post;
