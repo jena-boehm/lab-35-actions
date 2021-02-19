@@ -6,12 +6,11 @@ import { getPosts } from '../../selectors/postSelectors';
 
 function PostList() {
   const posts = useSelector(getPosts);
-  console.log(posts);
 
   const postElements = posts.map(post => {
-    return <p key={post.title}>
+    return <div key={post.title}>
       <Post {...post} />
-    </p>;
+    </div>;
   });
   
   return (

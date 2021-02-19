@@ -1,18 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Comment from './Comment';
+import { useSelector } from 'react-redux';
+import { getComments } from '../../selectors/commentsSelectors';
 
-function CommentList(props) {
+function CommentList() {
+  const comments = useSelector(getComments);
+
+  const commentElements = comments.map(comment => {
+    return <div key={comment.commentBody}>
+      <Comment {...comment} />
+    </div>;
+  });
+    
   return (
     <div>
-      <Comment />
+      {commentElements}
     </div>
   );
 }
 
-CommentList.propTypes = {
-
-};
-
 export default CommentList;
-
