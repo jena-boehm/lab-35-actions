@@ -9,7 +9,9 @@ function PostList() {
 
   const postElements = posts.map((post, index) => {
     return <div key={post.title}>
-      <Post {...post} index={index} />
+      <Post 
+        {...post} 
+        index={index} />
     </div>;
   });
   

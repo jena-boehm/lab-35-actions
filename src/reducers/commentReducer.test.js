@@ -8,6 +8,7 @@ describe('comment reducer', () => {
     };
 
     const action = createComment({
+      index: '1',
       body: 'this is a comment'
     });
 
@@ -15,6 +16,7 @@ describe('comment reducer', () => {
 
     expect(newState).toEqual({
       comments: [{
+        index: '1',
         body: 'this is a comment'
       }]
     });
@@ -23,6 +25,7 @@ describe('comment reducer', () => {
   it('should delete a comment with DELETE_COMMENT action', () => {
     const state = {
       comments: [{
+        index: '1',
         body: 'this is a comment'
       }] 
     };
@@ -31,6 +34,8 @@ describe('comment reducer', () => {
 
     const newState = commentReducer(state, action);
 
-    expect(newState).toEqual(newState);
+    expect(newState).toEqual({
+      comments: []
+    });
   });
 });
